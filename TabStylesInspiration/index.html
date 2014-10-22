@@ -72,7 +72,9 @@
 					</div><!-- /content -->
 				</div><!-- /tabs -->
 			</section>
-			<section>
+
+      <h2 style="padding: 0 2em">tab example 3</h2>
+      <section>
 				<div class="tabs tabs-style-underline">
 					<nav>
 						<ul>
@@ -92,7 +94,55 @@
 					</div><!-- /content -->
 				</div><!-- /tabs -->
 			</section>
-			<section>
+
+      <h2 style="padding: 0 2em">tab example 4</h2>
+      <h2 style="padding: 0 2em">css 画三角形的例子</h2>
+
+
+      <style>
+
+        .test_triangle{
+          width:200px;
+          margin:0 auto 20px;
+          position:relative;
+        }
+        a{
+          color:#3FB58E;
+          font-weight:bold;
+          text-decoration:none;
+        }
+        .up{
+          width:160px;
+          background:#3FB58E;
+          padding:10px 20px;
+          color:#fff;
+          border-radius:4px;
+          position:absolute;
+          top:30px;
+          left:-55px;
+        }
+        .up span{
+          display:block;
+          width:0;
+          height:0;
+          border-width:0 10px 10px;
+          border-style:solid;
+          border-color:transparent transparent #3FB58E;
+          position:absolute;
+          top:-10px;
+          left:50%;/* 三角形居中显示 */
+          margin-left:-10px;/* 三角形居中显示 */
+        }
+      </style>
+
+      <div class="test_zone">
+        <div class="test_triangle">
+          <a href="#">三角形</a>
+          <div class="up"><span></span>纯CSS写三角形</div>
+        </div>
+      </div>
+
+      <section>
 				<div class="tabs tabs-style-linetriangle">
 					<nav>
 						<ul>
