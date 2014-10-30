@@ -1,6 +1,17 @@
 ### 各种 tab 切换页的效果
 
 
+![](https://github.com/mydearxym/codrops_practice/blob/master/TabStylesInspiration/showcase/1.png)
+
+![](https://github.com/mydearxym/codrops_practice/blob/master/TabStylesInspiration/showcase/2.png)
+
+![](https://github.com/mydearxym/codrops_practice/blob/master/TabStylesInspiration/showcase/3.png)
+
+![](https://github.com/mydearxym/codrops_practice/blob/master/TabStylesInspiration/showcase/4.png)
+
+
+
+
 #### 代码结构
 
 > The main common tab style for all tabs can be found in tabs.css
