@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>云洋监测</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="main.css" rel="stylesheet"/>
+
+        <script src="./jquery.min.js"></script>
+        <script src="./jquery.localstorage.js"></script>
+
+        <script>
+         console.log("$.localStorage('key'): ",  $.localStorage('yy:token'));
+         $.localStorage('yy:token', 'testvalue');
+
+
+        </script>
+
+        <!-- <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script> -->
+        <style>
+
+         .mt10 {
+             margin-top:10px;
+         }
+
+         .mt60 {
+             margin-top:60px;
+         }
+
+         .new-user {
+             height:55px;
+             position:relative;
+         }
+
+         .new-user .line {
+             position:absolute;
+             border-bottom:1px solid rgb(157, 226, 195);
+             width:300px;
+             top:10%;
+             left:25%;
+             cursor: pointer;
+         }
+
+         .register-form {
+             display:none;
+         }
+
+         .register-btn {
+             background-color: rgba(255, 255, 255, 0.3);
+         }
+
+         .register-btn:hover {
+             color:grey;
+             background-color: rgba(255, 255, 255, 0.8);
+         }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+	          <div class="container">
+		            <h3>云洋监测欢迎您哈</h3>
+
+                <!-- <form class="form"> -->
+			          <!--     <input type="text" placeholder="用户名" class="js-login-username"> -->
+			          <!--     <input type="password" placeholder="密码" class="js-login-passwd"> -->
+
+                <!--     <button type="submit" id="login-button">登陆</button> -->
+		            <!-- </form> -->
+
+                <form class="form login-form">
+                    <p class="mt10">
+                        <!-- User name (4 characters minimum, only alphanumeric characters): -->
+                        <!-- <input data-validation="length alphanumeric" data-validation-length="min4"> -->
+                        <input placeholder="用户名" type="text"
+                               data-validation="alphanumeric"
+                               data-validation-allowing="-_"
+                               data-validation-error-msg="用户名必须为数字，英文以及'-_''">
+                    </p>
+
+                    <p class="mt10">
+                        <input type="password" placeholder="密码" class="js-login-passwd">
+                        <!-- Year (yyyy-mm-dd): -->
+                        <!-- <input data-validation="date" data-validation-format="yyyy-mm-dd"> -->
+                    </p>
+
+                    <div class="new-user">
+                        <div class="line"></div>
+                    </div>
+
+                    <p class="">
+                        <button type="submit" id="login-button">登陆</button>
+                    </p>
+                    <br>
+
+                    <p>
+                        <button type="button" class="register-btn js-register-btn">注册</button>
+                    </p>
+                    <!-- <input type="text" placeholder="用户名" class="js-login-username"> -->
+			              <!-- <input type="password" placeholder="密码" class="js-login-passwd"> -->
+                    <!-- <button type="submit" id="login-button">登陆</button> -->
+                </form>
+
+
+                <form class="form register-form">
+                    <p class="mt10">
+                        <input placeholder="用户名" type="text"
+                               data-validation="alphanumeric"
+                               data-validation-allowing="-_"
+                               data-validation-error-msg="用户名必须为数字，英文以及'-_''">
+                    </p>
+
+                    <p class="mt10">
+                        <input type="password" placeholder="密码" class="js-login-passwd">
+                    </p>
+
+                    <p class="mt10">
+                        <input type="password" placeholder="密码确认" class="js-login-passwd">
+                    </p>
+
+                    <div class="new-user">
+                        <div class="line"></div>
+                    </div>
+
+                    <br>
+                    <p>
+                        <button class="register-btn js-register-btn">注 册</button>
+                    </p>
+
+                    <br>
+                    <p>
+                        <button type="button" class="js-back-btn">返 回</button>
+                    </p>
+
+                </form>
+
+
+            </div>
+
+            <ul class="bg-bubbles">
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+	          </ul><!--bg-bubbles-->
+
+        </div><!--wrapper-->
+
+        
+        <script src="./jquery.form-validator.min.js"></script>
+        <script src="./velocity.min.js"></script>
+        <script src="./velocity.ui.min.js"></script>
+
+        <script>
+
+         $(document).ready(function(){
+
+             $.validate({validateOnBlur : false});
+
+             $(".js-login-username").blur(function(){
+                 console.log("js-login-username blur check username");
+             });
+
+             $(".js-login-passwd").blur(function(){
+                 console.log("js-login-username blur check password");
+             });
+
+
+             $("#login-button").click(function(event){
+		             //event.preventDefault();
+
+	               //$('form').fadeOut(500);
+	               //$('.wrapper').addClass('form-success'); -->
+             });
+
+             $(".register-btn").click(function(){
+                 console.log("register ..");
+                 $(".login-form").velocity("transition.shrinkOut", { duration: 100 , complete: function() {
+                     $(".register-form").velocity("transition.shrinkIn", {duration:200});
+                 }});
+
+                 //$(".login-form").hide(500);
+                 //$(".register-form").show(500);
+             });
+
+             $(".js-back-btn").click(function(){
+                 console.log("go back..");
+                 $(".register-form").velocity("transition.shrinkOut", { duration: 50 , complete: function() {
+                     $(".login-form").velocity("transition.shrinkIn", {duration:200});
+                 }})
+
+             });
+
+         })
+
+
+        </script>
+
+    </body>
+</html>
