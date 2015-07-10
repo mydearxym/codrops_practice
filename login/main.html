@@ -11,6 +11,8 @@
         <script src="./jquery.min.js"></script>
         <script src="./jquery.localstorage.js"></script>
 
+
+
         <script>
          console.log("$.localStorage('key'): ",  $.localStorage('yy:token'));
          $.localStorage('yy:token', 'testvalue');
@@ -47,11 +49,11 @@
              display:none;
          }
 
-         .register-btn {
+         .transparent-btn {
              background-color: rgba(255, 255, 255, 0.3);
          }
 
-         .register-btn:hover {
+         .transparent-btn:hover {
              color:grey;
              background-color: rgba(255, 255, 255, 0.8);
          }
@@ -98,7 +100,7 @@
                     <br>
 
                     <p>
-                        <button type="button" class="register-btn js-register-btn">注册</button>
+                        <button type="button" class="register-btn transparent-btn js-register-btn">注册</button>
                     </p>
                     <!-- <input type="text" placeholder="用户名" class="js-login-username"> -->
 			              <!-- <input type="password" placeholder="密码" class="js-login-passwd"> -->
@@ -128,18 +130,18 @@
 
                     <br>
                     <p>
-                        <button class="register-btn js-register-btn">注 册</button>
+                        <button type="submit" class="button js-register-btn">注 册</button>
                     </p>
 
                     <br>
                     <p>
-                        <button type="button" class="js-back-btn">返 回</button>
+                        <button type="button" class="transparent-btn js-back-btn">返 回</button>
                     </p>
 
                 </form>
 
 
-            </div>
+            </div><!--container-->
 
             <ul class="bg-bubbles">
 		            <li></li>
@@ -156,7 +158,7 @@
 
         </div><!--wrapper-->
 
-        
+
         <script src="./jquery.form-validator.min.js"></script>
         <script src="./velocity.min.js"></script>
         <script src="./velocity.ui.min.js"></script>
@@ -183,7 +185,7 @@
 	               //$('.wrapper').addClass('form-success'); -->
              });
 
-             $(".register-btn").click(function(){
+             $(".js-register-btn").click(function(){
                  console.log("register ..");
                  $(".login-form").velocity("transition.shrinkOut", { duration: 100 , complete: function() {
                      $(".register-form").velocity("transition.shrinkIn", {duration:200});
